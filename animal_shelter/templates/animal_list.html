@@ -6,15 +6,23 @@
 
 {% block content %}
 	<h2>Перечень всех любимцев</h2>
+	<div class=" all-pet">
+		{% for animal in object_list %}
+			<div class="col-3">
+				<div><a href="/animals/{{ animal.pk }}/"><img src="{{ animal.photo.url }}" alt="{{ animal.nickname }}"></a></div>
+				<div><h4>{{ animal.nickname }}</h4></div>	
+			</div>
+		{% endfor %}	
+	</div>
 {% endblock %}
 
-{% block list %}
-	<ul>
-		{% for animal in object_list %}
-		    <li>
-		    	<a href="/animals/{{ animal.pk }}/"><img src="{{ animal.photo.url }}" alt="{{ animal.nickname }}"></a>
-		    	<p>{{ animal.nickname }}</p>
-		    </li>
-		{% endfor %}
-	</ul>
-{% endblock %}
+{# {% block list %} #}
+	{# <ul> #}
+		{# {% for animal in object_list %} #}
+		    {# <li> #}
+		    	{# <a href="/animals/{{ animal.pk }}/"><img src="{{ animal.photo.url }}" alt="{{ animal.nickname }}"></a> #}
+		    	{# <p>{{ animal.nickname }}</p> #}
+		    {# </li> #}
+		{# {% endfor %} #}
+	{# </ul> #}
+{# {% endblock %} #}

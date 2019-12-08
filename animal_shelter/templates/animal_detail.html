@@ -5,15 +5,45 @@
 {% endblock %}
 
 {% block content %}
-	<h2>Персональная страница {{ object.nickname }}</h2>
-	<img src="{{ object.photo.url }}" alt="{{ object.nickname }}">
-	<p>{{ object.breed }}</p>
-	<p>{{ object.description }}</p>
-	<p>{{ object.arrival_date }}</p>
-	<p>{{ object.type_of_animal.type_name }}</p>
-	<p>{{ object.gender }}</p>
-	<p>{{ object.availability_of_reference }}</p>
-	<p>{{ object.age }}</p>
+	<h2>Меня зовут {{ object.nickname }}</h2>
+	<div class="animal-page-wrapper">
+		<div>
+		    <img src="{{ object.photo.url }}" alt="{{ object.nickname }}">
+		</div>
+		<div class="right-side-wrapper">
+			<div class="col-5">
+				<h5>Порода: {{ object.breed }}</h5>
+				<h5>Когда добавили на сайт: {{ object.arrival_date }}</h5>
+				<h5>Вид животного: {{ object.type_of_animal.type_name }}</h5>
+				<h5>Пол: 
+					{% if object.gender  == "B" %}
+				    	Мальчик
+				    {% else %}
+						Девочка
+					{% endif %}
+				</h5>
+				<h5>Привит:
+					{% if object.availability_of_reference  == "True" %}
+				    	Да
+				    {% else %}
+						Нет
+					{% endif %}
+				</h5>
+				<h5>Возраст: 
+					{% if object.age  <= 0 %}
+				    	Еще нету года
+				    {% else %}
+				    	{{object.age}}
+					{% endif %}
+				</h5>	
+			</div>	
+			<div class="col-7">
+				<h5>Описание:</h5>
+				{{ object.description|linebreaks }}
+			</div>	
+		</div>
+	</div>
+	
 {% endblock %}
 
 {% block list %}

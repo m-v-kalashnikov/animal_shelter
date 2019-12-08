@@ -17,10 +17,14 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls.static import static
 from django.conf import settings
-from animal_shelter.views import AnimalList, AnimalDetail
+from animal_shelter.views import AnimalList, AnimalDetail, HomePage, AboutPage, ContactPage
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('/', HomePage.as_view()),
+    path('', HomePage.as_view()),
+    path('contact/', ContactPage.as_view()),
+    path('about/', AboutPage.as_view()),
     path("animals/", AnimalList.as_view()),
     path("animals/<int:pk>/", AnimalDetail.as_view(), name="animal-detail"),
 ]
