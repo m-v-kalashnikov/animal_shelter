@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Любимци
+{% endblock %}
+
+{% block content %}
+	<h2>Перечень всех любимцев</h2>
+{% endblock %}
+
+{% block list %}
+	<ul>
+		{% for animal in object_list %}
+		    <li>
+		    	<a href="/animals/{{ animal.pk }}/"><img src="{{ animal.photo.url }}" alt="{{ animal.nickname }}"></a>
+		    	<p>{{ animal.nickname }}</p>
+		    </li>
+		{% endfor %}
+	</ul>
+{% endblock %}

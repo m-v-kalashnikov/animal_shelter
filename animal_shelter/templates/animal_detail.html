@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}
+	{{ object.nickname }}
+{% endblock %}
+
+{% block content %}
+	<h2>Персональная страница {{ object.nickname }}</h2>
+	<img src="{{ object.photo.url }}" alt="{{ object.nickname }}">
+	<p>{{ object.breed }}</p>
+	<p>{{ object.description }}</p>
+	<p>{{ object.arrival_date }}</p>
+	<p>{{ object.type_of_animal.type_name }}</p>
+	<p>{{ object.gender }}</p>
+	<p>{{ object.availability_of_reference }}</p>
+	<p>{{ object.age }}</p>
+{% endblock %}
+
+{% block list %}
+	
+{% endblock %}
