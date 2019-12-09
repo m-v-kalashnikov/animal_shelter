@@ -4,7 +4,7 @@ class Animal(models.Model):
     nickname = models.CharField(max_length=100)
     breed = models.TextField()
     description = models.TextField() 
-    arrival_date = models.TimeField(auto_now_add=True)
+    arrival_date = models.DateTimeField(auto_now_add=True)
     
     type_of_animal = models.ForeignKey('Type_of_animal', on_delete=models.CASCADE) # реализовал мерезотдельную модель чтобы можно было добавлять новых в админ-панели
     

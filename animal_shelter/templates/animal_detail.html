@@ -8,12 +8,14 @@
 	<h2>Меня зовут {{ object.nickname }}</h2>
 	<div class="animal-page-wrapper">
 		<div>
-		    <img src="{{ object.photo.url }}" alt="{{ object.nickname }}">
+		    <img src="{{ object.photo.url }}" height="256" width="256" alt="{{ object.nickname }}">
 		</div>
 		<div class="right-side-wrapper">
 			<div class="col-5">
 				<h5>Порода: {{ object.breed }}</h5>
-				<h5>Когда добавили на сайт: {{ object.arrival_date }}</h5>
+				<h5>Когда добавили на сайт: 
+					{{ object.arrival_date|date:"d.m.Y" }} {{ object.arrival_date|time:"H:i" }}
+				</h5>
 				<h5>Вид животного: {{ object.type_of_animal.type_name }}</h5>
 				<h5>Пол: 
 					{% if object.gender  == "B" %}
@@ -23,7 +25,7 @@
 					{% endif %}
 				</h5>
 				<h5>Привит:
-					{% if object.availability_of_reference  == "True" %}
+					{% if object.availability_of_reference  == True %}
 				    	Да
 				    {% else %}
 						Нет
@@ -42,10 +44,5 @@
 				{{ object.description|linebreaks }}
 			</div>	
 		</div>
-	</div>
-	
-{% endblock %}
-
-{% block list %}
-	
+	</div>	
 {% endblock %}

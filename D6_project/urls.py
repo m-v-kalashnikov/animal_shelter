@@ -21,7 +21,6 @@ from animal_shelter.views import AnimalList, AnimalDetail, HomePage, AboutPage, 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('/', HomePage.as_view()),
     path('', HomePage.as_view()),
     path('contact/', ContactPage.as_view()),
     path('about/', AboutPage.as_view()),
