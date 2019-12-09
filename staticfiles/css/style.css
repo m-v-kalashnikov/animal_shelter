@@ -1,0 +1,107 @@
+@font-face {
+    src: url('../fonts/MonotypeCorsive.ttf');
+    font-family: "Open Sans";
+}
+
+
+body {
+	background-color: #FFE2D9;
+}
+
+.container-fluid {
+	max-width: 1345px;
+}
+
+header {
+	margin-top: 0.7vw;
+	background-color: #e6bba8;
+	padding-top: 0.5vw;
+}
+
+header>div.col-3 {
+	display: flex;
+    justify-content: center;
+}
+
+header.row {
+	margin-right: 0px;
+    margin-left: 0px;
+    border-radius: 10px;
+}
+
+.quote {
+	font-family: Open Sans;
+	font-size: 39px;
+    line-height: 29px;
+    letter-spacing: -1.5px;
+    text-align: center;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.header-col {
+	display: flex;
+	flex-direction: column;
+    justify-content: space-around;
+}
+
+.header-row {
+	flex-direction: column;
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.link {
+    background-color: #403936;
+    padding: 0.5vw;
+    margin: 0.5vw;
+    width: 45%;
+    text-align: center;
+    color: #FFFFFF;
+    border-radius: 7px;
+}
+
+a:hover.link {
+	text-decoration: none;
+	color: #403936;
+	background-color: #FFFFFF;
+	-webkit-text-stroke: medium;
+	border-color: #403936;
+}
+
+.in-about {
+    margin-top: 1vw;
+    display: flex;
+}
+
+.all-pet {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.all-pet>div.col-3 {
+	margin-bottom: 2vw;
+}
+
+.animal-page-wrapper{
+	display: flex;
+    margin-top: 2vw;
+}
+
+.right-side-wrapper {
+    margin-left: 1vw;
+    display: flex;
+    width: 100%;
+}
+
+.home-content-wrapper {
+    display: flex;
+    margin-top: 2vw;
+}
+
+.home-content-text-wrapper {
+    margin-left: 1vw;
+}
